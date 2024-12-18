@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить элемент</title>
+</head>
+<body>
+    <button onclick="addElement()">Добавить элемент</button>
+    
+    <div id="container"></div>
+
+    <script>
+        // Переменная для отслеживания количества добавленных элементов
+        let count = 0;
+
+        // Функция для добавления нового элемента в контейнер
+        function addElement() {
+            count++; // Увеличиваем счетчик на 1 при каждом вызове функции
+
+            // Создаем новый элемент div
+            const newDiv = document.createElement('div');
+            
+            // Устанавливаем уникальный идентификатор для нового элемента
+            newDiv.id = 'element' + count;
+            
+            // Устанавливаем текстовое содержимое для нового элемента
+            newDiv.textContent = 'Новый элемент';
+            
+            // Добавляем новый элемент в контейнер с id 'container'
+            document.getElementById('container').appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
